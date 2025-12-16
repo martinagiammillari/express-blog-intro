@@ -5,17 +5,28 @@
 // Testare su postman
 
 import express from "express";
-import posts from "./posts";
+import posts from "./posts.js";
 
 
 const app = express ();
+const port = 3600;
 
-const port = 3000;
+
 app.get("/", (req, res)=>{
-console.log("Server del mio blog");
 res.send("Server del mio blog");
 })
 
+
+
+app.get("/bacheca", (req, res) => {
+  res.json({
+    conteggio: posts.length,
+    posts: posts
+  });
+});
+
+
+
 app.listen(port, function(){
-    console.log("il server è in ascolto sula porta 3000");
+    console.log("il server è in ascolto sula porta 3600");
 })
