@@ -10,6 +10,7 @@ import posts from "./posts.js";
 
 const app = express ();
 const port = 3600;
+app.use(express.static("public"));
 
 
 app.get("/", (req, res)=>{
